@@ -19,9 +19,21 @@ main {
 
 .logo {
   display: block;
-  margin: 0 0 2rem 0;
+  margin: 0 0 1rem 0;
   max-width: 30%;
   height: auto;
+}
+
+.repo-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: #E10054;
+  text-decoration: none;
+}
+
+.repo-link:hover {
+  color: #BB0F33;
+  text-decoration: underline;
 }
 
 .year-section {
