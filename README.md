@@ -2,6 +2,8 @@
 
 A webring for University of Waterloo CS students. Add your site and a short line about yourself.
 
+**Maintainers:** To ensure only you can merge PRs, edit [.github/CODEOWNERS](.github/CODEOWNERS) (put your GitHub username) and follow [.github/MAINTAINER_SETUP.md](.github/MAINTAINER_SETUP.md).
+
 ## Adding your row
 
 1. **Fork this repo** and open a pull request.
