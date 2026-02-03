@@ -38,7 +38,8 @@ export default async (req) => {
       headers: {
         "Content-Type": "application/json; charset=utf-8",
         "Access-Control-Allow-Origin": ALLOWED_ORIGIN,
-        "Cache-Control": "no-store",
+        "Cache-Control": "public, max-age=60",
+        "Netlify-CDN-Cache-Control": "public, max-age=60",
       },
     });
   };
