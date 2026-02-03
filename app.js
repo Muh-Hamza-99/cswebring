@@ -3,15 +3,18 @@
   container.classList.add('loading');
   container.textContent = 'Loading…';
 
-  fetch('students.json')
+  fetch('/.netlify/functions/webring')
     .then(function (res) {
-      if (!res.ok) throw new Error('Failed to load students');
+      if (!res.ok) throw new Error('Failed to load webring');
       return res.json();
     })
-    .then(function (students) {
+    .then(function (data) {
+      if (data.status !== 'ok' || !Array.isArray(data.rows)) {
+        throw new Error('Invalid response from server');
+      }
       container.classList.remove('loading');
       container.textContent = '';
-      render(students);
+      render(data.rows);
     })
     .catch(function (err) {
       container.classList.remove('loading');
@@ -52,13 +55,13 @@
         sep.className = 'separator';
         sep.textContent = ' | ';
 
-        var about = document.createElement('span');
-        about.className = 'about';
-        about.textContent = ' ' + student.about;
+        var fact = document.createElement('span');
+        fact.className = 'about';
+        fact.textContent = ' ' + student.fact;
 
         entry.appendChild(link);
         entry.appendChild(sep);
-        entry.appendChild(about);
+        entry.appendChild(fact);
         section.appendChild(entry);
       });
 
