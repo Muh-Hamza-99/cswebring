@@ -9,7 +9,7 @@
       return res.json();
     })
     .then(function (data) {
-      if (data.status !== 'ok' || !Array.isArray(data.rows)) {
+      if (data.ok === false || !Array.isArray(data.rows)) {
         throw new Error('Invalid response from server');
       }
       container.classList.remove('loading');
